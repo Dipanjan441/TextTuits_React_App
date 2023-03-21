@@ -35,9 +35,10 @@ export default function TextForm(props) {
     }
   return ( 
     <>
+    <div className={`text-${props.modee==='light'?'dark':'light'}`}>
         <h2>{props.heading}</h2>
         <div className="mb-3">
-            <textarea className="form-control" value={text} onChange={textConvtToUpp} id="exampleFormControlTextarea1" rows="5"></textarea>
+            <textarea className="form-control" value={text} onChange={textConvtToUpp} id="exampleFormControlTextarea1" rows="5" style={props.modee==='dark'?{backgroundColor:'grey',color:'white',caretColor:'white'}:{backgroundColor:'white',color:'black',caretColor:'black'}}></textarea>
         </div>
         <div>
             <button type="button" className="btn btn-success mx-2" onClick={convToUppercase}>Convert To Uppercase</button>
@@ -50,6 +51,7 @@ export default function TextForm(props) {
             <h3>Text Summary</h3>
             <p>No of Words : {count_words()} and No of Characters : {text.length}</p>
         </div>
+    </div>
     </>
   )
 }
