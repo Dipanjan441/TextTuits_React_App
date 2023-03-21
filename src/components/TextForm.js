@@ -6,11 +6,13 @@ export default function TextForm(props) {
     const [text,setText] = useState("");
     const convToUppercase = ()=>{
         setText(text.toUpperCase());
+        props.alertMsgg('Your text has been successfully converted to Uppercase','Success');
     }
     const convToLowercase = ()=>{
         setText(text.toLowerCase());
+        props.alertMsgg('Your text has been successfully converted to Lowercase','Success');
     }
-    const textConvtToUpp = (event)=>{
+    const textConvt = (event)=>{
         setText(event.target.value);
     }
     const count_words = ()=>{
@@ -28,17 +30,19 @@ export default function TextForm(props) {
         let reqText = document.getElementById('exampleFormControlTextarea1');
         reqText.select();
         navigator.clipboard.writeText(reqText.value);
+        props.alertMsgg('Your text has been successfully coppied','Success');
     }
     const removeExtraSpace = ()=>{
         let text_array = text.split(/[ ]+/);
         setText(text_array.join(" "));
+        props.alertMsgg('Extra spaces of your text has been removed successfully','Success');
     }
   return ( 
     <>
     <div className={`text-${props.modee==='light'?'dark':'light'}`}>
         <h2>{props.heading}</h2>
         <div className="mb-3">
-            <textarea className="form-control" value={text} onChange={textConvtToUpp} id="exampleFormControlTextarea1" rows="5" style={props.modee==='dark'?{backgroundColor:'grey',color:'white',caretColor:'white'}:{backgroundColor:'white',color:'black',caretColor:'black'}}></textarea>
+            <textarea className="form-control" value={text} onChange={textConvt} id="exampleFormControlTextarea1" rows="5" style={props.modee==='dark'?{backgroundColor:'grey',color:'white',caretColor:'white'}:{backgroundColor:'white',color:'black',caretColor:'black'}}></textarea>
         </div>
         <div>
             <button type="button" className="btn btn-success mx-2" onClick={convToUppercase}>Convert To Uppercase</button>
