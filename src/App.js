@@ -34,9 +34,21 @@ function App() {
           alertMsg('Light mode is enabled successfuly','Success');
         }
   }
+  const toggleGreenMode = ()=>{
+      if(mode==='light'){
+        setMode('green');
+        document.body.style.backgroundColor='#32de84';
+        alertMsg('Greenish mode is enabled successfuly','Success');
+      }
+      else{
+        setMode('light');
+        document.body.style.backgroundColor='white';
+        alertMsg('Light mode is enabled successfuly','Success');
+      }
+  }
   return (
     <>
-    <Navbar title={titlee} modee={mode} toggleModee = {toggleMode}/>
+    <Navbar title={titlee} modee={mode} toggleModee = {toggleMode} toggleGreenModee={toggleGreenMode}/>
     <Alert alert_msg={msg}/>
     <div className='container my-2'>
       <TextForm heading={"Enter Your Text to Analyaze"} modee={mode} alertMsgg={alertMsg}/>

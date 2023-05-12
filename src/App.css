@@ -39,3 +39,6 @@
 .block{
   color: red;
 }
+nav.bg-green{
+  background: linear-gradient(green,yellow);
+}

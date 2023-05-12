@@ -42,13 +42,13 @@ export default function TextForm(props) {
     <div className={`text-${props.modee==='light'?'dark':'light'}`}>
         <h2>{props.heading}</h2>
         <div className="mb-3">
-            <textarea className="form-control" value={text} onChange={textConvt} id="exampleFormControlTextarea1" rows="5" style={props.modee==='dark'?{backgroundColor:'grey',color:'white',caretColor:'white'}:{backgroundColor:'white',color:'black',caretColor:'black'}}></textarea>
+            <textarea className="form-control" value={text} onChange={textConvt} id="exampleFormControlTextarea1" rows="5" style={(props.modee==='dark')||(props.modee==='green')?{backgroundColor:'grey',color:'white',caretColor:'white'}:{backgroundColor:'white',color:'black',caretColor:'black'}}></textarea>
         </div>
         <div>
-            <button type="button" className="btn btn-success mx-2" onClick={convToUppercase}>Convert To Uppercase</button>
-            <button type="button" className="btn btn-success mx-2" onClick={convToLowercase}>Convert To Lowecase</button>
-            <button type="button" className="btn btn-success mx-2" onClick={coppyText}>Coppy Text</button>
-            <button type="button" className="btn btn-success mx-2" onClick={removeExtraSpace}>Remove Extra Spaces</button>
+            <button type="button" className={`btn btn-${props.modee==='green'?'primary':'success'} mx-2`} onClick={convToUppercase}>Convert To Uppercase</button>
+            <button type="button" className={`btn btn-${props.modee==='green'?'primary':'success'} mx-2`} onClick={convToLowercase}>Convert To Lowecase</button>
+            <button type="button" className={`btn btn-${props.modee==='green'?'primary':'success'} mx-2`} onClick={coppyText}>Coppy Text</button>
+            <button type="button" className={`btn btn-${props.modee==='green'?'primary':'success'} mx-2`} onClick={removeExtraSpace}>Remove Extra Spaces</button>
             {/* <button type="button" className="btn btn-success mx-2" onClick={convToNoOfReptWord}>No of Repetetive Word</button> */}
         </div>
         <div className="container my-3">
