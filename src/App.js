@@ -27,6 +27,7 @@ function App() {
           setMode('dark');
           document.body.style.backgroundColor='grey';
           alertMsg('Dark mode is enabled successfuly','Success');
+          document.title = 'TextUtils-Dark Mode';
         }
         else{
           setMode('light');
@@ -39,6 +40,7 @@ function App() {
         setMode('green');
         document.body.style.backgroundColor='#32de84';
         alertMsg('Greenish mode is enabled successfuly','Success');
+        document.title = 'TextUtils-Greenish Mode';
       }
       else{
         setMode('light');
