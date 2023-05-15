@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/TextTuits_React_App/static/css/main.19aecfa3.css",
+    "main.js": "/TextTuits_React_App/static/js/main.6c09cc51.js",
+    "static/js/787.28cb0dcd.chunk.js": "/TextTuits_React_App/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/TextTuits_React_App/index.html",
+    "main.19aecfa3.css.map": "/TextTuits_React_App/static/css/main.19aecfa3.css.map",
+    "main.6c09cc51.js.map": "/TextTuits_React_App/static/js/main.6c09cc51.js.map",
+    "787.28cb0dcd.chunk.js.map": "/TextTuits_React_App/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.19aecfa3.css",
+    "static/js/main.6c09cc51.js"
+  ]
+}
