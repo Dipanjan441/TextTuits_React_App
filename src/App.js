@@ -5,12 +5,17 @@ import Buttons from './components/Buttons';
 import About from './components/About';
 import React, {useState} from 'react';
 import Alert from './components/Alert';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
 
 
 
 function App() {
-  const titlee = "TextTuits";
+  const titlee = "TextUtils";
   const [mode,setMode] = useState('light');
   const [msg,setMsg] = useState(null);
   const alertMsg = (message,type)=>{
@@ -50,13 +55,19 @@ function App() {
   }
   return (
     <>
+    <Router>
     <Navbar title={titlee} modee={mode} toggleModee = {toggleMode} toggleGreenModee={toggleGreenMode}/>
     <Alert alert_msg={msg}/>
     <div className='container my-2'>
-      <TextForm heading={"Enter Your Text to Analyaze"} modee={mode} alertMsgg={alertMsg}/>
+      <Routes>
+            <Route path="/about" element={<About/>}>
+            </Route>
+            <Route path="/" element={<TextForm heading={"Enter Your Text to Analyaze"} modee={mode} alertMsgg={alertMsg}/>}>
+            </Route>
+      </Routes>
       {/* <Buttons button_name={"Convert To Uppercase"}/> */}
-      {/* <About/> */}
     </div>
+    </Router>
     </>
   )
 }
