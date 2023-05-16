@@ -42,3 +42,6 @@
 nav.bg-green{
   background: linear-gradient(green,yellow);
 }
+.content{
+  height: 50px;
+}
